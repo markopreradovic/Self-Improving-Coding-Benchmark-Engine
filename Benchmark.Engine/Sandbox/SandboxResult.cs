@@ -1,8 +1,11 @@
-﻿namespace Benchmark.Engine.Sandbox;
-
-public class SandboxResult
+﻿namespace Benchmark.Engine.Sandbox
 {
-    public bool Success { get; set; }
-    public string Output { get; set; } = string.Empty;
-    public string Error { get; set; } = string.Empty;
+    public class SandboxResult
+    {
+        public bool Success { get; set; }
+        public string Output { get; set; } = string.Empty;
+        public string Error { get; set; } = string.Empty;
+
+        public ExecutionMetrics Metrics { get; set; } = new ExecutionMetrics();
+    }
 }
