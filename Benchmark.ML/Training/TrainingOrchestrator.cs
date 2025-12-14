@@ -3,6 +3,7 @@ using Benchmark.Engine.Evaluation;
 using Benchmark.Engine.Problems.Models;
 using Benchmark.ML.LLM;
 
+
 namespace Benchmark.ML.Training;
 
 public class TrainingOrchestrator
@@ -30,7 +31,7 @@ public class TrainingOrchestrator
     public async Task<string> RunIterationAsync(CodingProblem problem, string solutionCode)
     {
         // 1. Evaluate solution 
-        var results = _evaluator.Evaluate(problem, solutionCode);
+        var results = await _evaluator.EvaluateAsync(problem, solutionCode);
 
         // 2. Make dataset from failed cases
         var dataset = _datasetBuilder.BuildDataset(problem, results);

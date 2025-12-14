@@ -1,29 +1,47 @@
 ﻿using Benchmark.Engine.Problems.Models;
+using Benchmark.Engine.Sandbox;
 
 namespace Benchmark.Engine.Evaluation;
 
 public class CodeEvaluator
 {
-    /// <summary>
-    /// Evaluate solution code against problem test cases.
-    /// For now only simulates environment for our test case.
-    /// </summary>
-    public List<EvaluationResult> Evaluate(CodingProblem problem, string solutionCode)
+    private readonly CodeSandbox _sandbox;
+
+    public CodeEvaluator(CodeSandbox sandbox)
+    {
+        _sandbox = sandbox;
+    }
+
+    public async Task<List<EvaluationResult>> EvaluateAsync(
+        CodingProblem problem,
+        string solutionCode,
+        CancellationToken cancellationToken = default)
     {
         var results = new List<EvaluationResult>();
 
         foreach (var test in problem.TestCases)
         {
-            // Za sada stub: ako problem title == "Sum of Two Numbers" simuliramo pass/fail
-            bool passed = problem.Title == "Sum of Two Numbers" && test.ExpectedOutput == "5";
+            var singleTestProblem = new CodingProblem
+            {
+                Title = problem.Title,
+                Description = problem.Description,
+                ExpectedFunctionSignature = problem.ExpectedFunctionSignature,
+                TestCases = new() { test }
+            };
+
+            var sandboxResult = await _sandbox.ExecuteAsync(
+                singleTestProblem,
+                solutionCode,
+                cancellationToken);
 
             results.Add(new EvaluationResult
             {
                 TestInput = test.Input,
                 ExpectedOutput = test.ExpectedOutput,
-                ActualOutput = passed ? test.ExpectedOutput : "0", // simulirani rezultat
-                Passed = passed,
-                ErrorMessage = passed ? string.Empty : "Stub evaluator failed"
+                ActualOutput = sandboxResult.Output,
+                Passed = sandboxResult.Success &&
+                         sandboxResult.Output == test.ExpectedOutput,
+                ErrorMessage = sandboxResult.Error
             });
         }
 
