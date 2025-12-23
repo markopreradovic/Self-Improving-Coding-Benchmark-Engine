@@ -2,9 +2,6 @@
 
 namespace Benchmark.Engine.Problems
 {
-    /// <summary>
-    /// Generates coding problems for benchmarking
-    /// </summary>
     public class ProblemGenerator
     {
         private readonly Random _rand = new();
@@ -12,9 +9,6 @@ namespace Benchmark.Engine.Problems
         /// <summary>
         /// Generate a batch of problems by category and difficulty
         /// </summary>
-        /// <param name="category">Category e.g., Arrays, DP, Graphs</param>
-        /// <param name="difficulty">Difficulty: Easy, Medium, Hard</param>
-        /// <param name="count">Number of problems</param>
         public async Task<List<CodingProblem>> GenerateBatchAsync(
             string category,
             string difficulty,
@@ -32,26 +26,23 @@ namespace Benchmark.Engine.Problems
         }
 
         /// <summary>
-        /// Generates a single dummy problem based on category and difficulty
+        /// Generate a single problem based on category and difficulty
         /// </summary>
         private CodingProblem GenerateProblem(string category, string difficulty, int index)
         {
             switch (category.ToLower())
             {
-                case "arrays":
-                    return GenerateArrayProblem(difficulty, index);
-
-                case "dp":
-                    return GenerateDPProblem(difficulty, index);
-
-                case "graphs":
-                    return GenerateGraphProblem(difficulty, index);
-
+                case "arrays": return GenerateArrayProblem(difficulty, index);
+                case "dp": return GenerateDPProblem(difficulty, index);
+                case "graphs": return GenerateGraphProblem(difficulty, index);
+                case "strings": return GenerateStringProblem(difficulty, index);
+                case "trees": return GenerateTreeProblem(difficulty, index);
+                case "backtracking": return GenerateBacktrackingProblem(difficulty, index);
+                case "sorting": return GenerateSortingProblem(difficulty, index);
                 default:
-                    // fallback simple sum problem
                     return new CodingProblem
                     {
-                        Title = $"Sum Two Numbers #{index}",
+                        Title = $"Fallback Problem #{index}",
                         ExpectedFunctionSignature = "int Sum(int a, int b)",
                         TestCases =
                         {
@@ -62,17 +53,30 @@ namespace Benchmark.Engine.Problems
             }
         }
 
+        #region Category Generators
+
         private CodingProblem GenerateArrayProblem(string difficulty, int index)
         {
+            int size = difficulty switch
+            {
+                "Easy" => 5,
+                "Medium" => 10,
+                "Hard" => 20,
+                _ => 5
+            };
+
+            var testCases = Enumerable.Range(1, 3)
+                .Select(_ => new TestCase
+                {
+                    Input = $"[{string.Join(",", Enumerable.Range(1, size).Select(_ => _rand.Next(1, 10)))}]",
+                    ExpectedOutput = "calculated" // placeholder
+                }).ToList();
+
             return new CodingProblem
             {
                 Title = $"Array Sum #{index} ({difficulty})",
                 ExpectedFunctionSignature = "int SumArray(int[] arr)",
-                TestCases =
-                {
-                    new() { Input = "[1,2,3]", ExpectedOutput = "6" },
-                    new() { Input = "[4,5,6]", ExpectedOutput = "15" }
-                }
+                TestCases = testCases
             };
         }
 
@@ -103,5 +107,61 @@ namespace Benchmark.Engine.Problems
                 }
             };
         }
+
+        private CodingProblem GenerateStringProblem(string difficulty, int index)
+        {
+            return new CodingProblem
+            {
+                Title = $"Palindrome Check #{index} ({difficulty})",
+                ExpectedFunctionSignature = "bool IsPalindrome(string s)",
+                TestCases =
+                {
+                    new() { Input = "\"racecar\"", ExpectedOutput = "true" },
+                    new() { Input = "\"hello\"", ExpectedOutput = "false" }
+                }
+            };
+        }
+
+        private CodingProblem GenerateTreeProblem(string difficulty, int index)
+        {
+            return new CodingProblem
+            {
+                Title = $"Tree Max Depth #{index} ({difficulty})",
+                ExpectedFunctionSignature = "int MaxDepth(TreeNode root)",
+                TestCases =
+                {
+                    new() { Input = "Tree1", ExpectedOutput = "3" },
+                    new() { Input = "Tree2", ExpectedOutput = "4" }
+                }
+            };
+        }
+
+        private CodingProblem GenerateBacktrackingProblem(string difficulty, int index)
+        {
+            return new CodingProblem
+            {
+                Title = $"N-Queens #{index} ({difficulty})",
+                ExpectedFunctionSignature = "List<List<string>> SolveNQueens(int n)",
+                TestCases =
+                {
+                    new() { Input = "4", ExpectedOutput = "[[\".Q..\",\"...Q\",\"Q...\",\"..Q.\"]]" }
+                }
+            };
+        }
+
+        private CodingProblem GenerateSortingProblem(string difficulty, int index)
+        {
+            return new CodingProblem
+            {
+                Title = $"Sorting Array #{index} ({difficulty})",
+                ExpectedFunctionSignature = "int[] SortArray(int[] arr)",
+                TestCases =
+                {
+                    new() { Input = "[5,3,1,4,2]", ExpectedOutput = "[1,2,3,4,5]" }
+                }
+            };
+        }
+
+        #endregion
     }
 }

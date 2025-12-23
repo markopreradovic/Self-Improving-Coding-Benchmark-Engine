@@ -1,4 +1,5 @@
-﻿using Benchmark.Engine.Problems;
+﻿using Benchmark.Engine.Metrics;
+using Benchmark.Engine.Problems;
 using Benchmark.Engine.Problems.Models;
 using Benchmark.Engine.Runner;
 using Benchmark.ML.LLM;
@@ -27,50 +28,52 @@ public class Worker : BackgroundService
     {
         var generator = new ProblemGenerator();
 
-        // 🔹 Batch loop – kategorije i težine
-        var categories = new[] { "Arrays", "DP", "Graphs" };
+        var categories = new[] { "Arrays", "DP", "Graphs", "Strings", "Trees", "Backtracking", "Sorting" };
         var difficulties = new[] { "Easy", "Medium" };
 
         foreach (var category in categories)
         {
             foreach (var difficulty in difficulties)
             {
-                Console.WriteLine($"Generating problems: {category} / {difficulty}");
-
                 var problems = await generator.GenerateBatchAsync(category, difficulty, count: 5);
 
-                // 🔹 Solver funkcija preko LLM
                 async Task<string> Solver(CodingProblem problem)
                 {
                     string prompt = problem.ToPrompt();
                     return await _llmClient.GenerateCodeAsync(prompt);
                 }
 
-                // 🔹 Benchmark i evaluacija
-                var benchmarkResults = await _benchmarkRunner.RunBenchmarksAsync(
-                    problems,
-                    Solver
-                );
+                var benchmarkResults = await _benchmarkRunner.RunBenchmarksAsync(problems, Solver);
 
-                foreach (var result in benchmarkResults)
+                // ← OVDJE ide tvoj blok za metrics logging i training loop
+                for (int i = 0; i < benchmarkResults.Count; i++)
                 {
-                    Console.WriteLine($"{result.ProblemTitle}: {result.PassedTests}/{result.TotalTests} passed, Accuracy={result.Accuracy:P}");
+                    var result = benchmarkResults[i];
+                    var problem = problems[i];
 
-                    // 🔹 Self-improving loop
+                    int trainingIterations = 0;
                     if (!result.PassedAllTests)
                     {
-                        var solutionCode = await Solver(problems.First()); // konkretni problem
-                        await _trainingOrchestrator.RunIterationAsync(
-                            problems.First(),
-                            solutionCode
-                        );
-
-                        Console.WriteLine($"Training iteration completed for {problems.First().Title}");
+                        var solutionCode = await Solver(problem);
+                        await _trainingOrchestrator.RunIterationAsync(problem, solutionCode);
+                        trainingIterations = 1;
                     }
+
+                    var metrics = new ProblemMetrics
+                    {
+                        Title = problem.Title,
+                        Category = problem.Category,
+                        Difficulty = problem.Difficulty,
+                        PassedTests = result.PassedTests,
+                        TotalTests = result.TotalTests,
+                        Accuracy = result.Accuracy,
+                        TrainingIterations = trainingIterations
+                    };
+
+                    await MetricsLogger.LogAsync(metrics);
                 }
             }
         }
-
-        Console.WriteLine("All batches completed!");
     }
+
 }
