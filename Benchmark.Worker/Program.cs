@@ -9,25 +9,15 @@ using Microsoft.Extensions.Hosting;
 
 var builder = Host.CreateApplicationBuilder(args);
 
-// ENGINE
-builder.Services.AddSingleton<CodeSandbox>();
-builder.Services.AddSingleton<CodeEvaluator>();
-builder.Services.AddSingleton<DatasetBuilder>();
-builder.Services.AddSingleton<BenchmarkRunner>();
-
-// ML
-builder.Services.AddSingleton<ILlmClient, OpenAiClient>();
-builder.Services.AddSingleton<TrainingOrchestrator>();
-
-// Worker
 builder.Services.AddHostedService<Worker>();
 
-builder.Services.AddSingleton<ILlmClient>(sp =>
-{
-    var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
-    return new OpenAiClient(apiKey);
-});
-
+builder.Services.AddSingleton<FailureAnalyzer>();
+builder.Services.AddSingleton<DatasetBuilder>();
+builder.Services.AddSingleton<BenchmarkRunner>();
+builder.Services.AddSingleton<ILlmClient>(sp => new OpenAiClient("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"));
+builder.Services.AddSingleton<TrainingOrchestrator>();
+builder.Services.AddSingleton<CodeEvaluator>();
+builder.Services.AddSingleton<CodeSandbox>();
 
 var host = builder.Build();
 host.Run();

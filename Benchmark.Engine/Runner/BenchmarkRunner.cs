@@ -4,32 +4,18 @@ using Benchmark.Engine.Dataset;
 
 namespace Benchmark.Engine.Runner
 {
-    /// <summary>
-    /// Responsible ONLY for running benchmarks:
-    /// - solving problems
-    /// - evaluating solutions
-    /// - collecting metrics
-    /// 
-    /// NO training, NO ML logic here.
-    /// </summary>
+    
     public class BenchmarkRunner
     {
-        private readonly CodeEvaluator _evaluator;
         private readonly DatasetBuilder _datasetBuilder;
+        private readonly CodeEvaluator _codeEvaluator;
 
-        public BenchmarkRunner(
-            CodeEvaluator evaluator,
-            DatasetBuilder datasetBuilder)
+        public BenchmarkRunner(DatasetBuilder datasetBuilder, CodeEvaluator codeEvaluator)
         {
-            _evaluator = evaluator;
             _datasetBuilder = datasetBuilder;
+            _codeEvaluator = codeEvaluator;
         }
 
-        /// <summary>
-        /// Runs benchmark for a batch of coding problems
-        /// </summary>
-        /// <param name="problems">List of coding problems</param>
-        /// <param name="solverFunc">Function that returns solution code</param>
         public async Task<List<BenchmarkResult>> RunBenchmarksAsync(
             List<CodingProblem> problems,
             Func<CodingProblem, Task<string>> solverFunc)
@@ -44,7 +30,7 @@ namespace Benchmark.Engine.Runner
                 string solutionCode = await solverFunc(problem);
 
                 // 2️⃣ Evaluate solution using sandbox
-                var evaluationResults = await _evaluator
+                var evaluationResults = await _codeEvaluator
                     .EvaluateAsync(problem, solutionCode);
 
                 sw.Stop();

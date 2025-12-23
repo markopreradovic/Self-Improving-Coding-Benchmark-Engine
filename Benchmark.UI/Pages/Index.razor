@@ -1,0 +1,62 @@
+﻿@page "/"
+@inject Services.MetricsService MetricsService
+@using Benchmark.Engine.Metrics
+@using MudBlazor
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="pa-4">
+    <MudText Typo="Typo.h4">Benchmark Dashboard</MudText>
+
+    @if (metrics == null)
+    {
+        <MudProgressCircular Indeterminate="true" Class="mt-4"/>
+    }
+    else
+    {
+        <MudPaper Class="pa-4 mt-4">
+            <MudText Typo="Typo.h6">Accuracy by Category & Difficulty</MudText>
+            <MudChart ChartType="ChartType.Bar"
+                      Labels="@accuracyLabels"
+                      Datasets="@accuracyDatasets" />
+        </MudPaper>
+
+        <MudPaper Class="pa-4 mt-4">
+            <MudText Typo="Typo.h6">Training Iterations by Problem</MudText>
+            <MudChart ChartType="ChartType.Bar"
+                      Labels="@problemTitles"
+                      Datasets="@iterationsDatasets" />
+        </MudPaper>
+    }
+</MudContainer>
+
+@code {
+    private List<ProblemMetrics>? metrics;
+
+    private string[] accuracyLabels = Array.Empty<string>();
+    private double[][] accuracyDatasets = Array.Empty<double[]>();
+
+    private string[] problemTitles = Array.Empty<string>();
+    private double[][] iterationsDatasets = Array.Empty<double[]>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        metrics = await MetricsService.GetMetricsAsync();
+
+        if (metrics.Count == 0)
+            return;
+
+        var grouped = metrics
+            .GroupBy(m => $"{m.Category}-{m.Difficulty}")
+            .Select(g => new
+            {
+                Label = g.Key,
+                Accuracy = g.Average(m => m.Accuracy * 100) // u %
+            })
+            .ToList();
+
+        accuracyLabels = grouped.Select(g => g.Label).ToArray();
+        accuracyDatasets = new double[][] { grouped.Select(g => g.Accuracy).ToArray() };
+
+        problemTitles = metrics.Select(m => m.Title).ToArray();
+        iterationsDatasets = new double[][] { metrics.Select(m => (double)m.TrainingIterations).ToArray() };
+    }
+}
