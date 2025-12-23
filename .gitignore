@@ -484,4 +484,4 @@ $RECYCLE.BIN/
 *.swp
 
 Benchmark.Worker/appsettings.json
-
+Benchmark.Worker/Program.cs
