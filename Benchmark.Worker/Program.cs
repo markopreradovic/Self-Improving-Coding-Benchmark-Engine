@@ -22,5 +22,12 @@ builder.Services.AddSingleton<TrainingOrchestrator>();
 // Worker
 builder.Services.AddHostedService<Worker>();
 
+builder.Services.AddSingleton<ILlmClient>(sp =>
+{
+    var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
+    return new OpenAiClient(apiKey);
+});
+
+
 var host = builder.Build();
 host.Run();

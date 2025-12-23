@@ -3,12 +3,15 @@
 public interface ILlmClient
 {
     /// <summary>
-    /// Generates code solution for a given prompt
+    /// Generates code from a text prompt using an LLM
     /// </summary>
-    Task<string> GenerateCodeAsync(string prompt, CancellationToken cancellationToken = default);
+    Task<string> GenerateCodeAsync(string prompt);
 
     /// <summary>
-    /// Fine-tunes a model with provided JSONL dataset
+    /// Fine-tune the model using a dataset
     /// </summary>
-    Task<string> FineTuneAsync(string datasetFilePath, CancellationToken cancellationToken = default);
+    /// <param name="datasetPath">Path to dataset file</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>New model ID</returns>
+    Task<string> FineTuneAsync(string datasetPath, CancellationToken cancellationToken = default);
 }

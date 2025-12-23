@@ -1,5 +1,7 @@
-﻿using Benchmark.Engine.Problems.Models;
+﻿using Benchmark.Engine.Problems;
+using Benchmark.Engine.Problems.Models;
 using Benchmark.Engine.Runner;
+using Benchmark.ML.LLM;
 using Benchmark.ML.Training;
 using Microsoft.Extensions.Hosting;
 
@@ -9,54 +11,66 @@ public class Worker : BackgroundService
 {
     private readonly BenchmarkRunner _benchmarkRunner;
     private readonly TrainingOrchestrator _trainingOrchestrator;
+    private readonly ILlmClient _llmClient;
 
     public Worker(
         BenchmarkRunner benchmarkRunner,
-        TrainingOrchestrator trainingOrchestrator)
+        TrainingOrchestrator trainingOrchestrator,
+        ILlmClient llmClient)
     {
         _benchmarkRunner = benchmarkRunner;
         _trainingOrchestrator = trainingOrchestrator;
+        _llmClient = llmClient;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        // 1️⃣ Dummy problem (za test)
-        var problem = new CodingProblem
-        {
-            Title = "Sum Two Numbers",
-            ExpectedFunctionSignature = "int Sum(int a, int b)",
-            TestCases =
-            {
-                new() { Input = "2,3", ExpectedOutput = "5" },
-                new() { Input = "5,7", ExpectedOutput = "12" }
-            }
-        };
+        var generator = new ProblemGenerator();
 
-        // 2️⃣ Dummy solver (kasnije LLM)
-        async Task<string> Solver(CodingProblem p)
+        // 🔹 Batch loop – kategorije i težine
+        var categories = new[] { "Arrays", "DP", "Graphs" };
+        var difficulties = new[] { "Easy", "Medium" };
+
+        foreach (var category in categories)
         {
-            return """
-            int Sum(int a, int b)
+            foreach (var difficulty in difficulties)
             {
-                return a + b;
+                Console.WriteLine($"Generating problems: {category} / {difficulty}");
+
+                var problems = await generator.GenerateBatchAsync(category, difficulty, count: 5);
+
+                // 🔹 Solver funkcija preko LLM
+                async Task<string> Solver(CodingProblem problem)
+                {
+                    string prompt = problem.ToPrompt();
+                    return await _llmClient.GenerateCodeAsync(prompt);
+                }
+
+                // 🔹 Benchmark i evaluacija
+                var benchmarkResults = await _benchmarkRunner.RunBenchmarksAsync(
+                    problems,
+                    Solver
+                );
+
+                foreach (var result in benchmarkResults)
+                {
+                    Console.WriteLine($"{result.ProblemTitle}: {result.PassedTests}/{result.TotalTests} passed, Accuracy={result.Accuracy:P}");
+
+                    // 🔹 Self-improving loop
+                    if (!result.PassedAllTests)
+                    {
+                        var solutionCode = await Solver(problems.First()); // konkretni problem
+                        await _trainingOrchestrator.RunIterationAsync(
+                            problems.First(),
+                            solutionCode
+                        );
+
+                        Console.WriteLine($"Training iteration completed for {problems.First().Title}");
+                    }
+                }
             }
-            """;
         }
 
-        // 3️⃣ Run benchmark
-        var results = await _benchmarkRunner.RunBenchmarksAsync(
-            new List<CodingProblem> { problem },
-            Solver);
-
-        // 4️⃣ Training loop (self-improving)
-        foreach (var result in results)
-        {
-            if (!result.PassedAllTests)
-            {
-                await _trainingOrchestrator.RunIterationAsync(
-                    problem,
-                    await Solver(problem));
-            }
-        }
+        Console.WriteLine("All batches completed!");
     }
 }
