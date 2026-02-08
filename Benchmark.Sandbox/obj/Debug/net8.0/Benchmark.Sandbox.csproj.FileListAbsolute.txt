@@ -1,0 +1,11 @@
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/bin/Debug/net8.0/Benchmark.Sandbox.deps.json
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/bin/Debug/net8.0/Benchmark.Sandbox.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/bin/Debug/net8.0/Benchmark.Sandbox.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.GeneratedMSBuildEditorConfig.editorconfig
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.AssemblyInfoInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.AssemblyInfo.cs
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.csproj.CoreCompileInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/refint/Benchmark.Sandbox.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/ref/Benchmark.Sandbox.dll

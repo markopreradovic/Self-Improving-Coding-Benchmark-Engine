@@ -1,0 +1,196 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/Benchmark.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/Benchmark.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/Benchmark.Application.csproj",
+        "projectName": "Benchmark.Application",
+        "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/Benchmark.Application.csproj",
+        "packagesPath": "/home/marko/.nuget/packages/",
+        "outputPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/marko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/Benchmark.Domain.csproj": {
+                "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/Benchmark.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/marko/.dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/Benchmark.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/Benchmark.Domain.csproj",
+        "projectName": "Benchmark.Domain",
+        "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/Benchmark.Domain.csproj",
+        "packagesPath": "/home/marko/.nuget/packages/",
+        "outputPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/marko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/marko/.dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/Benchmark.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/Benchmark.Infrastructure.csproj",
+        "projectName": "Benchmark.Infrastructure",
+        "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/Benchmark.Infrastructure.csproj",
+        "packagesPath": "/home/marko/.nuget/packages/",
+        "outputPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/marko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/Benchmark.Application.csproj": {
+                "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/Benchmark.Application.csproj"
+              },
+              "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/Benchmark.Domain.csproj": {
+                "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/Benchmark.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/marko/.dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

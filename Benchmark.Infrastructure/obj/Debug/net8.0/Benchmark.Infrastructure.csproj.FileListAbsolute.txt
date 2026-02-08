@@ -1,0 +1,17 @@
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/bin/Debug/net8.0/Benchmark.Infrastructure.deps.json
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/bin/Debug/net8.0/Benchmark.Infrastructure.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/bin/Debug/net8.0/Benchmark.Infrastructure.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/bin/Debug/net8.0/Benchmark.Application.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/bin/Debug/net8.0/Benchmark.Domain.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/bin/Debug/net8.0/Benchmark.Application.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/bin/Debug/net8.0/Benchmark.Domain.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.csproj.AssemblyReference.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.AssemblyInfoInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.AssemblyInfo.cs
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.csproj.CoreCompileInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmar.3D514569.Up2Date
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/refint/Benchmark.Infrastructure.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/ref/Benchmark.Infrastructure.dll

@@ -1,0 +1,15 @@
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/bin/Debug/net8.0/Benchmark.Application.deps.json
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/bin/Debug/net8.0/Benchmark.Application.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/bin/Debug/net8.0/Benchmark.Application.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/bin/Debug/net8.0/Benchmark.Domain.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/bin/Debug/net8.0/Benchmark.Domain.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/Benchmark.Application.csproj.AssemblyReference.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/Benchmark.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/Benchmark.Application.AssemblyInfoInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/Benchmark.Application.AssemblyInfo.cs
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/Benchmark.Application.csproj.CoreCompileInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/Benchmar.A3FD7680.Up2Date
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/Benchmark.Application.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/refint/Benchmark.Application.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/Benchmark.Application.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Application/obj/Debug/net8.0/ref/Benchmark.Application.dll
