@@ -1,0 +1,55 @@
+/SelfImprovingCodingBenchmark.sln
+# Build output
+bin/
+obj/
+out/
+artifacts/
+publish/
+
+# Rider
+.idea/
+*.sln.iml
+*.iws
+*.ipr
+*.iml
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Logs
+*.log
+*.tlog/
+
+# Dotnet Core / .NET
+project.lock.json
+project.fragment.lock.json
+
+# Publish outputs
+*.publish.xml
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.DS_Store
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.bak
+*.backup
+*.old
+
+# User-specific files
+*.user
+*.userprefs
+*.suo
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
