@@ -13,6 +13,7 @@
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.UI/obj/Debug/net8.0/Benchmark.UI.AssemblyInfo.cs
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.UI/obj/Debug/net8.0/Benchmark.UI.csproj.CoreCompileInputs.cache
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.UI/obj/Debug/net8.0/Benchmark.UI.MvcApplicationPartsAssemblyInfo.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.UI/obj/Debug/net8.0/Benchmark.UI.sourcelink.json
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.UI/obj/Debug/net8.0/rjimswa.dswa.cache.json
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.UI/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.UI/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json

@@ -10,6 +10,7 @@
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/obj/Debug/net8.0/Benchmark.ML.AssemblyInfoInputs.cache
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/obj/Debug/net8.0/Benchmark.ML.AssemblyInfo.cs
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/obj/Debug/net8.0/Benchmark.ML.csproj.CoreCompileInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/obj/Debug/net8.0/Benchmark.ML.sourcelink.json
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/obj/Debug/net8.0/Benchmar.9FACAF51.Up2Date
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/obj/Debug/net8.0/Benchmark.ML.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/obj/Debug/net8.0/refint/Benchmark.ML.dll

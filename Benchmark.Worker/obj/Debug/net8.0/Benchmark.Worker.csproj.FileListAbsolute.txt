@@ -5,6 +5,12 @@
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Benchmark.Worker.runtimeconfig.json
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Benchmark.Worker.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Benchmark.Worker.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/ErrorOr.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/FluentValidation.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/MediatR.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/MediatR.Contracts.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
@@ -32,6 +38,11 @@
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/System.Diagnostics.EventLog.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll
@@ -46,6 +57,7 @@
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/obj/Debug/net8.0/Benchmark.Worker.AssemblyInfoInputs.cache
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/obj/Debug/net8.0/Benchmark.Worker.AssemblyInfo.cs
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/obj/Debug/net8.0/Benchmark.Worker.csproj.CoreCompileInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/obj/Debug/net8.0/Benchmark.Worker.sourcelink.json
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/obj/Debug/net8.0/Benchmar.02D6D915.Up2Date
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/obj/Debug/net8.0/Benchmark.Worker.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Worker/obj/Debug/net8.0/refint/Benchmark.Worker.dll

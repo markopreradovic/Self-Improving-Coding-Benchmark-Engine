@@ -5,6 +5,7 @@
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.AssemblyInfoInputs.cache
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.AssemblyInfo.cs
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.csproj.CoreCompileInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.sourcelink.json
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/refint/Benchmark.Sandbox.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/obj/Debug/net8.0/Benchmark.Sandbox.pdb

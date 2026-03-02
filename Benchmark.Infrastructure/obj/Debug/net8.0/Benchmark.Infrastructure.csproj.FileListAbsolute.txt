@@ -10,6 +10,7 @@
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.AssemblyInfoInputs.cache
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.AssemblyInfo.cs
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.csproj.CoreCompileInputs.cache
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.sourcelink.json
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmar.3D514569.Up2Date
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/Benchmark.Infrastructure.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/obj/Debug/net8.0/refint/Benchmark.Infrastructure.dll

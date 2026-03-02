@@ -13,8 +13,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Benchmark.Application\Benchmark.Application.csproj" />
-      <ProjectReference Include="..\Benchmark.Infrastructure\Benchmark.Infrastructure.csproj" />
+        <ProjectReference Include="..\Benchmark.Application\Benchmark.Application.csproj" />
+        <ProjectReference Include="..\Benchmark.Infrastructure\Benchmark.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
