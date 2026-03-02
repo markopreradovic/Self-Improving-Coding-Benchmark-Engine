@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zc2T8h6D6rA=",
+  "dgSpecHash": "3Q//nA8HRhA=",
   "success": true,
   "projectFilePath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Domain/Benchmark.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/marko/.nuget/packages/erroror/2.0.1/erroror.2.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
