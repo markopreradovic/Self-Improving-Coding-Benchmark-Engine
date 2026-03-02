@@ -1,12 +1,15 @@
 using System.Text.Json.Serialization;
 using Benchmark.Api.Features.Problems;
 using Benchmark.Application.Features.Problems.Commands;
+using Benchmark.Application.Generators;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IProblemGenerator, ArrayProblemGenerator>();
 
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
