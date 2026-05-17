@@ -11,5 +11,6 @@ public static partial class DomainErrors
         public static readonly Error InvalidCategory = Error.Validation("Problem.InvalidCategory", "Invalid category specified.");
         public static readonly Error NoTestCases = Error.Validation("Problem.NoTestCases", "At least one test case is required.");
         public static readonly Error UnsupportedCategory = Error.Validation("Problem.UnsupportedCategory", "The specified category is not supported.");
+        public static readonly Error NotFound = Error.NotFound("Problem.NotFound", "Problem with the specified ID was not found.");
     }
 }

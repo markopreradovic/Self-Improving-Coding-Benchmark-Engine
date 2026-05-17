@@ -1,3 +1,4 @@
+using Benchmark.Application.Common.DTOs;
 using Benchmark.Domain.Problems;
 using ErrorOr;
 using MediatR;
@@ -5,7 +6,7 @@ using MediatR;
 namespace Benchmark.Application.Features.Problems.Commands;
 
 public record GenerateProblemCommand(
-    ProblemCategory? Category = null,         
+    ProblemCategory? Category = null,
     DifficultyLevel? Difficulty = null,
     int? MinTestCases = 3
-) : IRequest<ErrorOr<CodingProblem>>;
+) : IRequest<ErrorOr<ProblemDetailDto>>;

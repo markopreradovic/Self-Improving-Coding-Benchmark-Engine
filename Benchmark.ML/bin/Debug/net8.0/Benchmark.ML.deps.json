@@ -157,10 +157,7 @@
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0"
         },
         "runtime": {
-          "Benchmark.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Benchmark.Application.dll": {}
         }
       },
       "Benchmark.Domain/1.0.0": {
@@ -168,10 +165,7 @@
           "ErrorOr": "2.0.1"
         },
         "runtime": {
-          "Benchmark.Domain.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Benchmark.Domain.dll": {}
         }
       }
     }

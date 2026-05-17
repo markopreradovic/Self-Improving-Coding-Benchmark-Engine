@@ -1,4 +1,4 @@
-/* /Components/Layout/MainLayout.razor.rz.scp.css */
+/* _content/Benchmark.UI/Components/Layout/MainLayout.razor.rz.scp.css */
 .page[b-rnxpzt5fro] {
     position: relative;
     display: flex;
@@ -95,7 +95,7 @@ main[b-rnxpzt5fro] {
         right: 0.75rem;
         top: 0.5rem;
     }
-/* /Components/Layout/NavMenu.razor.rz.scp.css */
+/* _content/Benchmark.UI/Components/Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-sjo2cjvrdo] {
     appearance: none;
     cursor: pointer;

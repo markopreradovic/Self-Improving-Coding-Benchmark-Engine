@@ -11,11 +11,11 @@ public class CodingProblem
     public ProblemCategory Category { get; private set; }
     public DifficultyLevel Difficulty { get; private set; }
     public string FunctionSignature { get; private set; } = string.Empty;  // f.e. "int[] TwoSum(int[] nums, int target)"
-    public IReadOnlyList<TestCase> TestCases { get; private set; } = new List<TestCase>();
+    public DateTime CreatedAt { get; private set; }
 
+    public IReadOnlyList<TestCase> TestCases => _testCases.AsReadOnly();
     private readonly List<TestCase> _testCases = new();
 
-    // private ctor
     private CodingProblem() { }
 
     public static ErrorOr<CodingProblem> Create(
@@ -43,12 +43,11 @@ public class CodingProblem
             Category = category,
             Difficulty = difficulty,
             FunctionSignature = functionSignature.Trim(),
+            CreatedAt = DateTime.UtcNow,
         };
 
         foreach (var tc in testCases)
             problem._testCases.Add(tc);
-
-        problem.TestCases = problem._testCases.AsReadOnly();
 
         return problem;
     }

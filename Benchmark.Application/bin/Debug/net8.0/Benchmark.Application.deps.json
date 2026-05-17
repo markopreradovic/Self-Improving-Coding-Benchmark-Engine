@@ -156,10 +156,7 @@
           "ErrorOr": "2.0.1"
         },
         "runtime": {
-          "Benchmark.Domain.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Benchmark.Domain.dll": {}
         }
       }
     }
