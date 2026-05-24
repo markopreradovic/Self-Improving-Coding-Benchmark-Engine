@@ -9,7 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IProblemGenerator, ArrayProblemGenerator>();
+builder.Services.AddScoped<ITypedProblemGenerator, ArrayProblemGenerator>();
+builder.Services.AddScoped<ITypedProblemGenerator, StringProblemGenerator>();
+builder.Services.AddScoped<ITypedProblemGenerator, TreeProblemGenerator>();
+builder.Services.AddScoped<ITypedProblemGenerator, GraphProblemGenerator>();
+builder.Services.AddScoped<ITypedProblemGenerator, DynamicProgrammingProblemGenerator>();
+builder.Services.AddScoped<ITypedProblemGenerator, MathProblemGenerator>();
+builder.Services.AddScoped<IProblemGenerator, ProblemGeneratorRouter>();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 

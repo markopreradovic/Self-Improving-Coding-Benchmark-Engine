@@ -4,9 +4,11 @@ using ErrorOr;
 
 namespace Benchmark.Application.Generators;
 
-public class ArrayProblemGenerator : IProblemGenerator
+public class ArrayProblemGenerator : ITypedProblemGenerator
 {
     private static readonly Random _random = new Random();
+
+    public ProblemCategory SupportedCategory => ProblemCategory.Array;
 
     private readonly List<(string Title, string DescriptionTemplate, string FuncSigTemplate, Func<int, List<TestCase>> TestCaseGenerator)> _templates = new()
     {
