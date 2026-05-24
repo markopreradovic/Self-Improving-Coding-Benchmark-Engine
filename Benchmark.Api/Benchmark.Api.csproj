@@ -8,6 +8,10 @@
 
     <ItemGroup>
         <PackageReference Include="MediatR" Version="14.0.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.9.2" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.9.2" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.9.2" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.23"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">
             <PrivateAssets>all</PrivateAssets>
@@ -19,6 +23,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Benchmark.Application\Benchmark.Application.csproj" />
         <ProjectReference Include="..\Benchmark.Infrastructure\Benchmark.Infrastructure.csproj" />
+        <ProjectReference Include="..\Benchmark.Sandbox\Benchmark.Sandbox.csproj" />
     </ItemGroup>
 
 </Project>

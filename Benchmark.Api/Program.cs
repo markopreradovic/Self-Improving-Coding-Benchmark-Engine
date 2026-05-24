@@ -1,8 +1,11 @@
 using System.Text.Json.Serialization;
 using Benchmark.Api.Features.Problems;
+using Benchmark.Api.Features.Sandbox;
 using Benchmark.Application.Features.Problems.Commands;
 using Benchmark.Application.Generators;
+using Benchmark.Domain.Sandbox;
 using Benchmark.Infrastructure;
+using Benchmark.Sandbox.Execution;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +21,7 @@ builder.Services.AddScoped<ITypedProblemGenerator, MathProblemGenerator>();
 builder.Services.AddScoped<IProblemGenerator, ProblemGeneratorRouter>();
 
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddScoped<ICodeRunner, CodeRunner>();
 
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
@@ -42,5 +46,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapProblemEndpoints();
+app.MapSandboxEndpoints();
 
 app.Run();

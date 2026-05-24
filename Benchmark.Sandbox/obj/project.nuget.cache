@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "pna3kT/LBP0nwsI4WEPZnaknMNBu1eonPVq3f4lTU21JzomPpC/32kzD38pmafLla7A9Ie6bpH4iU8fglR7tkg==",
+  "dgSpecHash": "dDEjuXFQ5EqCgWc8w2hIXRMy58ra/f7r6U9kJTbGKZK8yVI2B8jjgvhVNosdFD+Y6uFJKt17TPQtlRSjIhoUXQ==",
   "success": true,
   "projectFilePath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/Benchmark.Sandbox.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/marko/.nuget/packages/erroror/2.0.1/erroror.2.0.1.nupkg.sha512",
+    "/home/marko/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4/microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
+    "/home/marko/.nuget/packages/microsoft.codeanalysis.common/4.9.2/microsoft.codeanalysis.common.4.9.2.nupkg.sha512",
+    "/home/marko/.nuget/packages/microsoft.codeanalysis.csharp/4.9.2/microsoft.codeanalysis.csharp.4.9.2.nupkg.sha512",
+    "/home/marko/.nuget/packages/microsoft.codeanalysis.csharp.scripting/4.9.2/microsoft.codeanalysis.csharp.scripting.4.9.2.nupkg.sha512",
+    "/home/marko/.nuget/packages/microsoft.codeanalysis.scripting.common/4.9.2/microsoft.codeanalysis.scripting.common.4.9.2.nupkg.sha512",
+    "/home/marko/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/home/marko/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",
+    "/home/marko/.nuget/packages/system.reflection.metadata/8.0.0/system.reflection.metadata.8.0.0.nupkg.sha512",
+    "/home/marko/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
