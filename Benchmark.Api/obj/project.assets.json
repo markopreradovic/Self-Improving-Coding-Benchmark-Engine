@@ -1382,6 +1382,23 @@
           "bin/placeholder/Benchmark.Infrastructure.dll": {}
         }
       },
+      "Benchmark.ML/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Benchmark.Application": "1.0.0",
+          "Benchmark.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Benchmark.ML.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Benchmark.ML.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Benchmark.Sandbox/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -3999,6 +4016,11 @@
       "path": "../Benchmark.Infrastructure/Benchmark.Infrastructure.csproj",
       "msbuildProject": "../Benchmark.Infrastructure/Benchmark.Infrastructure.csproj"
     },
+    "Benchmark.ML/1.0.0": {
+      "type": "project",
+      "path": "../Benchmark.ML/Benchmark.ML.csproj",
+      "msbuildProject": "../Benchmark.ML/Benchmark.ML.csproj"
+    },
     "Benchmark.Sandbox/1.0.0": {
       "type": "project",
       "path": "../Benchmark.Sandbox/Benchmark.Sandbox.csproj",
@@ -4009,6 +4031,7 @@
     "net8.0": [
       "Benchmark.Application >= 1.0.0",
       "Benchmark.Infrastructure >= 1.0.0",
+      "Benchmark.ML >= 1.0.0",
       "Benchmark.Sandbox >= 1.0.0",
       "MediatR >= 14.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.23",
@@ -4050,6 +4073,9 @@
             },
             "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/Benchmark.Infrastructure.csproj": {
               "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Infrastructure/Benchmark.Infrastructure.csproj"
+            },
+            "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/Benchmark.ML.csproj": {
+              "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.ML/Benchmark.ML.csproj"
             },
             "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/Benchmark.Sandbox.csproj": {
               "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Sandbox/Benchmark.Sandbox.csproj"

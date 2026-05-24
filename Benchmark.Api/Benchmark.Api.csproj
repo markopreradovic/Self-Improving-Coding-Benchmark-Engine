@@ -24,6 +24,7 @@
         <ProjectReference Include="..\Benchmark.Application\Benchmark.Application.csproj" />
         <ProjectReference Include="..\Benchmark.Infrastructure\Benchmark.Infrastructure.csproj" />
         <ProjectReference Include="..\Benchmark.Sandbox\Benchmark.Sandbox.csproj" />
+        <ProjectReference Include="..\Benchmark.ML\Benchmark.ML.csproj" />
     </ItemGroup>
 
 </Project>

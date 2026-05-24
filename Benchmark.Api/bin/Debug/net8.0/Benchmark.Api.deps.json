@@ -10,6 +10,7 @@
         "dependencies": {
           "Benchmark.Application": "1.0.0",
           "Benchmark.Infrastructure": "1.0.0",
+          "Benchmark.ML": "1.0.0",
           "Benchmark.Sandbox": "1.0.0",
           "MediatR": "14.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.23",
@@ -959,6 +960,15 @@
           "Benchmark.Infrastructure.dll": {}
         }
       },
+      "Benchmark.ML/1.0.0": {
+        "dependencies": {
+          "Benchmark.Application": "1.0.0",
+          "Benchmark.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Benchmark.ML.dll": {}
+        }
+      },
       "Benchmark.Sandbox/1.0.0": {
         "dependencies": {
           "Benchmark.Domain": "1.0.0",
@@ -1428,6 +1438,11 @@
       "sha512": ""
     },
     "Benchmark.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Benchmark.ML/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

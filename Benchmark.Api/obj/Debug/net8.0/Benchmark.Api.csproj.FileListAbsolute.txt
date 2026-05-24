@@ -179,3 +179,5 @@
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Api/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Api/bin/Debug/net8.0/Benchmark.Sandbox.dll
 /home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Api/bin/Debug/net8.0/Benchmark.Sandbox.pdb
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Api/bin/Debug/net8.0/Benchmark.ML.dll
+/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Api/bin/Debug/net8.0/Benchmark.ML.pdb
