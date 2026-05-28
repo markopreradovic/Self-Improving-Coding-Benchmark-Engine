@@ -25,6 +25,7 @@ public static class DependencyInjection
             sp.GetRequiredService<BenchmarkDbContext>());
 
         services.AddScoped<IProblemRepository, ProblemRepository>();
+        services.AddScoped<IEvaluationRepository, EvaluationRepository>();
 
         return services;
     }

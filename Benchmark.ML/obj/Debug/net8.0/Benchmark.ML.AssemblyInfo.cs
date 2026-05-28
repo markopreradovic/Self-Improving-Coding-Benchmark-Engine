@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Benchmark.ML")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1abf3d46255f303ef2237c92f9d1877e768e4921")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9279d47371f574a09d93c96d80f983a4d606fa24")]
 [assembly: System.Reflection.AssemblyProductAttribute("Benchmark.ML")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Benchmark.ML")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

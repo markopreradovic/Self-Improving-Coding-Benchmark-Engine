@@ -17,6 +17,51 @@ namespace Benchmark.Infrastructure.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.11");
 
+            modelBuilder.Entity("Benchmark.Domain.Evaluation.EvaluationResult", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("EvaluatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("GeneratedCode")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModelName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("OverallVerdict")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PassedCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("ProblemId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Score")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("TotalCount")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EvaluatedAt");
+
+                    b.HasIndex("ModelName");
+
+                    b.HasIndex("ProblemId");
+
+                    b.ToTable("Evaluations", (string)null);
+                });
+
             modelBuilder.Entity("Benchmark.Domain.Problems.CodingProblem", b =>
                 {
                     b.Property<Guid>("Id")
@@ -60,6 +105,56 @@ namespace Benchmark.Infrastructure.Migrations
                     b.HasIndex("Difficulty");
 
                     b.ToTable("Problems", (string)null);
+                });
+
+            modelBuilder.Entity("Benchmark.Domain.Evaluation.EvaluationResult", b =>
+                {
+                    b.OwnsMany("Benchmark.Domain.Evaluation.TestCaseResult", "TestCaseResults", b1 =>
+                        {
+                            b1.Property<Guid>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("ActualOutput")
+                                .HasMaxLength(1000)
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("ErrorMessage")
+                                .HasMaxLength(2000)
+                                .HasColumnType("TEXT");
+
+                            b1.Property<Guid>("EvaluationId")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<long>("ExecutionTimeMs")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<string>("ExpectedOutput")
+                                .IsRequired()
+                                .HasMaxLength(1000)
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Input")
+                                .IsRequired()
+                                .HasMaxLength(2000)
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Verdict")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("TEXT");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("EvaluationId");
+
+                            b1.ToTable("EvaluationTestCaseResults", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("EvaluationId");
+                        });
+
+                    b.Navigation("TestCaseResults");
                 });
 
             modelBuilder.Entity("Benchmark.Domain.Problems.CodingProblem", b =>

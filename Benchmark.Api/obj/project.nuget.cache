@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "URMgPl/+5Yc=",
+  "dgSpecHash": "wkGP6UwfgMn0J3Kt0fSfKzKCQjjNvaTnRm+tfGxWfFe1unDlUnEwqGKRBaRfhnKg4ZU+74V8CAER9O6kt5SRbw==",
   "success": true,
   "projectFilePath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Api/Benchmark.Api.csproj",
   "expectedPackageFiles": [
@@ -72,10 +72,8 @@
     {
       "code": "NU1608",
       "level": "Warning",
-      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 14.0.0 was resolved.",
-      "projectPath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Api/Benchmark.Api.csproj",
       "warningLevel": 1,
-      "filePath": "/home/marko/RiderProjects/SelfImprovingCodingBenchmark/Benchmark.Api/Benchmark.Api.csproj",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 14.0.0 was resolved.",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net8.0"
