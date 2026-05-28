@@ -1,3 +1,4 @@
+using Benchmark.Domain.Dataset;
 using Benchmark.Domain.Evaluation;
 using Benchmark.Domain.Problems;
 using Benchmark.Domain.Repositories;
@@ -9,6 +10,7 @@ public class BenchmarkDbContext : DbContext, IUnitOfWork
 {
     public DbSet<CodingProblem> Problems => Set<CodingProblem>();
     public DbSet<EvaluationResult> Evaluations => Set<EvaluationResult>();
+    public DbSet<FineTuneSample> FineTuneSamples => Set<FineTuneSample>();
 
     public BenchmarkDbContext(DbContextOptions<BenchmarkDbContext> options) : base(options) { }
 

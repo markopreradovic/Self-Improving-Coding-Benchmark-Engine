@@ -26,6 +26,7 @@ public static class DependencyInjection
 
         services.AddScoped<IProblemRepository, ProblemRepository>();
         services.AddScoped<IEvaluationRepository, EvaluationRepository>();
+        services.AddScoped<IFineTuneSampleRepository, FineTuneSampleRepository>();
 
         return services;
     }

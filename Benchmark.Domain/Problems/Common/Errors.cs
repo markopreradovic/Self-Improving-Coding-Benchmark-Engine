@@ -13,4 +13,10 @@ public static partial class DomainErrors
         public static readonly Error UnsupportedCategory = Error.Validation("Problem.UnsupportedCategory", "The specified category is not supported.");
         public static readonly Error NotFound = Error.NotFound("Problem.NotFound", "Problem with the specified ID was not found.");
     }
+
+    public static class Evaluation
+    {
+        public static readonly Error NotFound = Error.NotFound("Evaluation.NotFound", "Evaluation with the specified ID was not found.");
+        public static readonly Error NoCode = Error.Validation("Evaluation.NoCode", "Evaluation has no generated code to build a dataset sample from.");
+    }
 }
