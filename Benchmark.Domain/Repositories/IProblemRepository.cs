@@ -12,4 +12,6 @@ public interface IProblemRepository
         int page,
         int pageSize,
         CancellationToken ct = default);
+
+    Task<IReadOnlyList<CodingProblem>> GetUnevaluatedAsync(int limit, CancellationToken ct = default);
 }

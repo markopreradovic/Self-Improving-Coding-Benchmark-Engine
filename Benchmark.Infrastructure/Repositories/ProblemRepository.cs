@@ -51,4 +51,10 @@ public class ProblemRepository : IProblemRepository
 
         return (items, totalCount);
     }
+
+    public async Task<IReadOnlyList<CodingProblem>> GetUnevaluatedAsync(int limit, CancellationToken ct = default)
+        => await _context.Problems
+            .Where(p => !_context.Evaluations.Any(e => e.ProblemId == p.Id))
+            .Take(limit)
+            .ToListAsync(ct);
 }

@@ -9,10 +9,13 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1"/>
+        <PackageReference Include="MediatR" Version="14.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Benchmark.Application\Benchmark.Application.csproj" />
       <ProjectReference Include="..\Benchmark.Infrastructure\Benchmark.Infrastructure.csproj" />
+      <ProjectReference Include="..\Benchmark.ML\Benchmark.ML.csproj" />
+      <ProjectReference Include="..\Benchmark.Sandbox\Benchmark.Sandbox.csproj" />
     </ItemGroup>
 </Project>

@@ -24,4 +24,12 @@ public class EvaluationRepository : IEvaluationRepository
             .Where(e => e.ProblemId == problemId)
             .OrderByDescending(e => e.EvaluatedAt)
             .ToListAsync(ct);
+
+    public async Task<IReadOnlyList<EvaluationResult>> GetWithoutSamplesAsync(
+        int limit, CancellationToken ct = default)
+        => await _context.Evaluations
+            .Where(e => e.GeneratedCode != null &&
+                        !_context.FineTuneSamples.Any(s => s.EvaluationId == e.Id))
+            .Take(limit)
+            .ToListAsync(ct);
 }
