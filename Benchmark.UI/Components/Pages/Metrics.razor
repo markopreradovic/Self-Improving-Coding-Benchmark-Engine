@@ -1,0 +1,89 @@
+@page "/metrics"
+@using Benchmark.Application.Common.DTOs
+@using Benchmark.UI.Services
+@using Benchmark.UI.Components
+@inject BenchmarkApiClient Api
+@rendermode InteractiveServer
+
+<PageTitle>Metrics – Benchmark Engine</PageTitle>
+
+<h2 class="mb-4">Metrics &amp; Weakness Analysis</h2>
+
+@if (_loading)
+{
+    <p><em>Loading...</em></p>
+}
+else if (_error is not null)
+{
+    <div class="alert alert-warning">⚠️ @_error</div>
+}
+else if (_summary is not null)
+{
+    <div class="row g-3 mb-5">
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="fs-3 fw-bold text-primary">@_summary.TotalProblems</div>
+                    <div class="text-muted small">Total Problems</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="fs-3 fw-bold text-primary">@_summary.TotalEvaluations</div>
+                    <div class="text-muted small">Evaluations Run</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="fs-3 fw-bold text-primary">@_summary.TotalSamples</div>
+                    <div class="text-muted small">Training Samples</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="fs-3 fw-bold @RateColor(_summary.OverallSuccessRate)">
+                        @_summary.OverallSuccessRate.ToString("P0")
+                    </div>
+                    <div class="text-muted small">Overall Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mb-3">Weakness Heatmap <small class="text-muted fs-6">(Category × Difficulty)</small></h4>
+    <p class="text-muted small mb-3">
+        Cells coloured from <span style="color:hsl(0,65%,45%)">■ red (low pass rate)</span>
+        → <span style="color:hsl(60,65%,45%)">■ yellow</span>
+        → <span style="color:hsl(120,65%,45%)">■ green (high pass rate)</span>
+    </p>
+    <WeaknessHeatmap Data="@_summary.Heatmap" />
+}
+
+@code {
+    private MetricsSummaryDto? _summary;
+    private bool    _loading = true;
+    private string? _error;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _summary = await Api.GetMetricsSummaryAsync();
+        }
+        catch (Exception ex) { _error = ex.Message; }
+        finally { _loading = false; }
+    }
+
+    private static string RateColor(double r) => r switch
+    {
+        >= 0.8  => "text-success",
+        >= 0.5  => "text-warning",
+        _       => "text-danger"
+    };
+}

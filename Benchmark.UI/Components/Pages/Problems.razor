@@ -1,0 +1,101 @@
+@page "/problems"
+@using Benchmark.Application.Common.DTOs
+@using Benchmark.UI.Services
+@inject BenchmarkApiClient Api
+@rendermode InteractiveServer
+
+<PageTitle>Problems – Benchmark Engine</PageTitle>
+
+<h2 class="mb-4">Problems</h2>
+
+<div class="row g-2 mb-3">
+    <div class="col-auto">
+        <select class="form-select form-select-sm" @bind="_category">
+            <option value="">All Categories</option>
+            <option>Array</option><option>String</option><option>Math</option>
+            <option>Tree</option><option>Graph</option><option>DynamicProgramming</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <select class="form-select form-select-sm" @bind="_difficulty">
+            <option value="">All Difficulties</option>
+            <option>Easy</option><option>Medium</option><option>Hard</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-sm btn-primary" @onclick="LoadProblems">Filter</button>
+    </div>
+</div>
+
+@if (_loading)
+{
+    <p><em>Loading...</em></p>
+}
+else if (_error is not null)
+{
+    <div class="alert alert-warning">⚠️ @_error</div>
+}
+else if (_problems is { Count: 0 })
+{
+    <p class="text-muted">No problems found. Generate some via the API first.</p>
+}
+else if (_problems is not null)
+{
+    <table class="table table-sm table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Difficulty</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in _problems)
+            {
+                <tr>
+                    <td>@p.Title</td>
+                    <td><span class="badge bg-secondary">@p.Category</span></td>
+                    <td>
+                        <span class="badge @DifficultyBadge(p.Difficulty.ToString())">
+                            @p.Difficulty
+                        </span>
+                    </td>
+                    <td>@p.CreatedAt.ToString("dd MMM yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<ProblemSummaryDto>? _problems;
+    private bool    _loading    = true;
+    private string? _error;
+    private string  _category   = string.Empty;
+    private string  _difficulty = string.Empty;
+
+    protected override async Task OnInitializedAsync() => await LoadProblems();
+
+    private async Task LoadProblems()
+    {
+        _loading = true;
+        _error   = null;
+        try
+        {
+            _problems = await Api.GetProblemsAsync(
+                string.IsNullOrEmpty(_category)   ? null : _category,
+                string.IsNullOrEmpty(_difficulty) ? null : _difficulty);
+        }
+        catch (Exception ex) { _error = ex.Message; }
+        finally { _loading = false; }
+    }
+
+    private static string DifficultyBadge(string d) => d switch
+    {
+        "Easy"   => "bg-success",
+        "Medium" => "bg-warning text-dark",
+        "Hard"   => "bg-danger",
+        _        => "bg-secondary"
+    };
+}

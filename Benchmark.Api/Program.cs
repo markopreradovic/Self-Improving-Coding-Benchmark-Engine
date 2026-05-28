@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 using Benchmark.Api.Features.Dataset;
+using Benchmark.Api.Features.Metrics;
+using Benchmark.Api.Features.Training;
 using Benchmark.Api.Features.Evaluation;
 using Benchmark.Api.Features.Problems;
 using Benchmark.Api.Features.Sandbox;
@@ -58,5 +60,7 @@ app.MapSandboxEndpoints();
 app.MapSolverEndpoints();
 app.MapEvaluationEndpoints();
 app.MapDatasetEndpoints();
+app.MapTrainingEndpoints();
+app.MapMetricsEndpoints();
 
 app.Run();

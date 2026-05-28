@@ -1,0 +1,62 @@
+@using Benchmark.Application.Common.DTOs
+
+@* 2D heatmap: Category × Difficulty coloured by avg success rate *@
+
+@if (Data is null || !Data.Any())
+{
+    <p class="text-muted">No evaluation data yet.</p>
+}
+else
+{
+    var categories  = Data.Select(d => d.Category).Distinct().OrderBy(x => x).ToList();
+    var difficulties = new[] { "Easy", "Medium", "Hard" };
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-center align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Category</th>
+                    @foreach (var d in difficulties)
+                    {
+                        <th>@d</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cat in categories)
+                {
+                    <tr>
+                        <td class="fw-semibold">@cat</td>
+                        @foreach (var diff in difficulties)
+                        {
+                            var entry = Data.FirstOrDefault(x => x.Category == cat && x.Difficulty == diff);
+                            if (entry is null)
+                            {
+                                <td class="text-muted">–</td>
+                            }
+                            else
+                            {
+                                var bg = ScoreToColor(entry.AvgScore);
+                                <td style="background-color:@bg; color: #000; font-size:0.82rem;">
+                                    <div class="fw-bold">@entry.AvgScore.ToString("P0")</div>
+                                    <div class="text-secondary" style="font-size:0.72rem;">@entry.Total eval(s)</div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    [Parameter] public IReadOnlyList<HeatmapEntryDto>? Data { get; set; }
+
+    private static string ScoreToColor(double score)
+    {
+        // Interpolate: 0→red, 0.5→yellow, 1→green  (HSL)
+        var hue = (int)(score * 120);   // 0=red, 60=yellow, 120=green
+        return $"hsl({hue}, 65%, 70%)";
+    }
+}

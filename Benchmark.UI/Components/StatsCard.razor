@@ -1,0 +1,13 @@
+@* Reusable stats card component *@
+
+<div class="card text-center shadow-sm h-100">
+    <div class="card-body">
+        <div class="fs-2 fw-bold text-primary">@Value</div>
+        <div class="text-muted small">@Label</div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Label { get; set; } = string.Empty;
+    [Parameter] public string Value { get; set; } = string.Empty;
+}

@@ -1,0 +1,84 @@
+@page "/"
+@using Benchmark.Application.Common.DTOs
+@using Benchmark.UI.Services
+@using Benchmark.UI.Components
+@inject BenchmarkApiClient Api
+@rendermode InteractiveServer
+
+<PageTitle>Dashboard – Benchmark Engine</PageTitle>
+
+<h2 class="mb-4">Dashboard</h2>
+
+@if (_loading)
+{
+    <p><em>Loading...</em></p>
+}
+else if (_error is not null)
+{
+    <div class="alert alert-warning">⚠️ API unavailable: @_error</div>
+}
+else if (_summary is not null)
+{
+    <div class="row g-3 mb-5">
+        <div class="col-6 col-md-3">
+            <StatsCard Label="Problems" Value="@_summary.TotalProblems.ToString()" />
+        </div>
+        <div class="col-6 col-md-3">
+            <StatsCard Label="Evaluations" Value="@_summary.TotalEvaluations.ToString()" />
+        </div>
+        <div class="col-6 col-md-3">
+            <StatsCard Label="Training Samples" Value="@_summary.TotalSamples.ToString()" />
+        </div>
+        <div class="col-6 col-md-3">
+            <StatsCard Label="Avg Success Rate" Value="@_summary.OverallSuccessRate.ToString("P0")" />
+        </div>
+    </div>
+
+    <h4 class="mb-3">Weakness Heatmap</h4>
+    <WeaknessHeatmap Data="@_summary.Heatmap" />
+}
+
+@if (_versions is { Count: > 0 })
+{
+    <h4 class="mt-5 mb-3">Model Versions</h4>
+    <table class="table table-sm table-hover">
+        <thead><tr><th>Model</th><th>v</th><th>Accuracy</th><th>Samples</th><th>Created</th><th>Active</th></tr></thead>
+        <tbody>
+            @foreach (var v in _versions)
+            {
+                <tr>
+                    <td>@v.ModelName</td>
+                    <td>@v.VersionNumber</td>
+                    <td>@v.AccuracyScore.ToString("P0")</td>
+                    <td>@v.TrainingSamples</td>
+                    <td>@v.CreatedAt.ToString("dd MMM yyyy")</td>
+                    <td>@(v.IsActive ? "✅" : "–")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private MetricsSummaryDto?         _summary;
+    private List<ModelVersionDto>?     _versions;
+    private bool                       _loading = true;
+    private string?                    _error;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _summary  = await Api.GetMetricsSummaryAsync();
+            _versions = await Api.GetModelVersionsAsync();
+        }
+        catch (Exception ex)
+        {
+            _error = ex.Message;
+        }
+        finally
+        {
+            _loading = false;
+        }
+    }
+}

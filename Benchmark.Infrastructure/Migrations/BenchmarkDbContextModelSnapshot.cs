@@ -181,6 +181,50 @@ namespace Benchmark.Infrastructure.Migrations
                     b.ToTable("Problems", (string)null);
                 });
 
+            modelBuilder.Entity("Benchmark.Domain.Training.ModelVersion", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("AccuracyScore")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("BaseModel")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FilePath")
+                        .HasMaxLength(500)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ModelName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TrainingSamples")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("VersionNumber")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsActive");
+
+                    b.HasIndex("ModelName");
+
+                    b.ToTable("ModelVersions", (string)null);
+                });
+
             modelBuilder.Entity("Benchmark.Domain.Evaluation.EvaluationResult", b =>
                 {
                     b.OwnsMany("Benchmark.Domain.Evaluation.TestCaseResult", "TestCaseResults", b1 =>
